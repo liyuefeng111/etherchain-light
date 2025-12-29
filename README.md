@@ -70,3 +70,16 @@ docker run -p "3000:3000" \
 ```bash
 docker-compose up
 ```
+## 项目改造说明（liyuefeng）
+### 一、改造内容
+1.  改造位置 1：修改浏览器页面标题
+    - 文件路径：`views/layout.pug`（实际修改的文件，非 index.html）
+    - 原始内容：`title Etherchain Light`（Pug 模板语法，无 HTML 闭合标签）
+    - 改造后内容：`title liyuefeng-Etherchain Light`
+    - 改造效果：浏览器标签页显示自定义标题，直观可见，便于区分个人改造后的项目。
+
+2.  改造位置 2：修改前端样式 CDN 地址（替换原节点地址修改，效果更直观）
+    - 文件路径：`config.js`（由 `config.js.example` 复制生成后修改）
+    - 原始内容：`this.bootstrapUrl = "https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/yeti/bootstrap.min.css";`
+    - 改造后内容：`this.bootstrapUrl = "https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/cosmo/bootstrap.min.css";`（替换为 cosmo 样式）
+    - 改造效果：项目启动后页面颜色、按钮样式等视觉风格发生明显变化，验证改造生效。
